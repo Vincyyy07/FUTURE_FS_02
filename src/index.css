@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 12% 97%;
+    --foreground: 240 12% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 12% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 12% 12%;
+
+    --primary: 255 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 90%;
+    --secondary-foreground: 240 6% 30%;
+
+    --muted: 240 6% 95%;
+    --muted-foreground: 240 5% 52%;
+
+    --accent: 255 80% 97%;
+    --accent-foreground: 255 80% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 92%;
+    --ring: 255 80% 65%;
+
+    --radius: 0.625rem;
+
+    --status-new: 213 93% 55%;
+    --status-contacted: 35 95% 53%;
+    --status-converted: 142 72% 44%;
+
+    --shadow-card: 0 0 0 1px rgba(0, 0, 0, .06), 0 1px 3px 0 rgba(0, 0, 0, .06);
+    --shadow-card-hover: 0 0 0 1px rgba(0, 0, 0, .06), 0 4px 12px -2px rgba(0, 0, 0, .10), 0 2px 4px -2px rgba(0, 0, 0, .06);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 6% 24%;
+    --sidebar-primary: 255 80% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 255 80% 97%;
+    --sidebar-accent-foreground: 255 80% 40%;
+    --sidebar-border: 240 6% 90%;
+    --sidebar-ring: 255 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    font-weight: 600;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .bg-status-new {
+    background-color: hsl(var(--status-new));
+  }
+
+  .bg-status-contacted {
+    background-color: hsl(var(--status-contacted));
+  }
+
+  .bg-status-converted {
+    background-color: hsl(var(--status-converted));
+  }
+
+  .text-status-new {
+    color: hsl(var(--status-new));
+  }
+
+  .text-status-contacted {
+    color: hsl(var(--status-contacted));
+  }
+
+  .text-status-converted {
+    color: hsl(var(--status-converted));
+  }
+
+  .badge-new {
+    background-color: hsl(213 93% 95%);
+    color: hsl(213 93% 38%);
+  }
+
+  .badge-contacted {
+    background-color: hsl(35 95% 94%);
+    color: hsl(35 90% 35%);
+  }
+
+  .badge-converted {
+    background-color: hsl(142 72% 92%);
+    color: hsl(142 72% 28%);
+  }
+}
+
+@keyframes status-flash {
+  0% {
+    background-color: hsl(142 72% 92%);
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-status-flash {
+  animation: status-flash 600ms ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out both;
+}
