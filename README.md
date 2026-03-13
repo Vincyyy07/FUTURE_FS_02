@@ -2,6 +2,8 @@
 
 A Smart Client Lead Management System built for freelancers, agencies, and small startups.
 
+🔴 **Live Demo:** [https://leadflow-crm-rouge.vercel.app/](https://leadflow-crm-rouge.vercel.app/)
+
 ## 🎯 What is LeadFlow?
 
 LeadFlow helps you capture, track, and convert incoming leads into paying clients. Instead of losing track of emails and follow-ups, LeadFlow gives you a centralized dashboard that tracks exactly where every prospective client is in your sales pipeline.
@@ -71,9 +73,12 @@ npm install
 npm run dev
 ```
 
-## 🌍 Ready for Deployment
+## 🌍 Deployment
 
-The codebase is fully cleaned, production-optimized, and **ready to be deployed!** 
+This project is currently deployed and hosted on Vercel:
+**Live Application:** [https://leadflow-crm-rouge.vercel.app/](https://leadflow-crm-rouge.vercel.app/)
+
+*If you wish to deploy your own instance:*
 
 ### Recommended Deployment Providers:
 1. **Vercel** (Highly Recommended for Vite/React)
